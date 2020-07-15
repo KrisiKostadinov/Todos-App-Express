@@ -1,19 +1,22 @@
 const express = require('express');
-const exphbs = require('express-handlebars');
+const expressLayouts = require('express-ejs-layouts');
+const bodyParser = require('body-parser');
+
 const todosRouter = require('./routes/todos');
+
+require('./config/db');
 
 const app = express();
 
 const port = process.env.PORT || 3000;
 
-app.engine('.hbs', exphbs({
-    extname: '.hbs'
-}));
-app.set('view engine', '.hbs');
+app.use(expressLayouts);
+app.set('view engine', 'ejs');
+app.set('layout', 'layouts/main');
 
-app.get('/', (req, res) => {
-    res.render('todos');
-});
-app.use('/todos', todosRouter);
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+app.use('/', todosRouter);
 
 app.listen(port, () => console.log(`Server running on port: ${port}`));

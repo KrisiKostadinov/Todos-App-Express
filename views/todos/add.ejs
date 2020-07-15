@@ -1,9 +1,9 @@
 <div class="col-md-6 mx-auto">
     <h2 class="my-4">Create a new To-do</h2>
-    <form>
+    <form method="POST" action="/add">
         <div class="form-group">
             <label for="text">Content</label>
-            <textarea type="text" class="form-control" id="test"></textarea>
+            <textarea type="text" class="form-control" name="text" id="test"></textarea>
         </div>
         <button type="submit" class="btn btn-primary">Add</button>
         <a href="/" type="button" class="btn btn-danger">Cancel</a>

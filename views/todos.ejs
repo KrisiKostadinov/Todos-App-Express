@@ -1,0 +1,9 @@
+<div class="text-center col-md-6 mx-auto">
+    <h2 class="my-4">All to-do's</h2>
+    <ul class="list-group">
+        <% todos.forEach(function(todo) { %>
+            <li class="list-group-item text-left"><%= todo.text %></li>
+        <% }); %>
+    </ul>
+    <a href="/add" class="btn btn-outline-primary mt-4">Add</a>
+</div>
