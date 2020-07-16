@@ -9,6 +9,11 @@ module.exports = {
         async all(req, res) {
             const todos = await Todo.find();
             res.render('todos', { todos });
+        },
+
+        async details(req, res) {
+            const todo = await Todo.findById(req.params.id);
+            res.render('todos/details', { todo: todo });
         }
     },
 

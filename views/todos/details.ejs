@@ -1,0 +1,7 @@
+<div class="todo-container">
+    <div id="<%-todo._id%>" class="container"><%- todo.text %></div>
+    <div class="mt-4">
+        <a href="/" type="button" class="btn btn-danger">Cancel</a>
+        <a href="/todo/dismiss/<%- todo._id%>" type="button" class="btn btn-danger">Dismiss</a>
+    </div>
+</div>
