@@ -2,7 +2,7 @@
     <h2 class="my-4">All to-do's</h2>
     <ul class="list-group">
         <% todos.forEach(function(todo) { %>
-            <a href="/todos/details/<%- todo._id%>" class="list-group-item list-group-item-action flex-column align-items-start">
+            <a href="/details/<%- todo._id%>" class="list-group-item list-group-item-action flex-column align-items-start">
                 <p class="mb-1"><%= todo.text %></p>
             </a>
         <% }); %>

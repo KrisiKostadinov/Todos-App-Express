@@ -26,6 +26,13 @@ module.exports = {
             });
 
             res.redirect('/');
+        },
+
+        async del(req, res) {
+            const id = req.params.id;
+
+            const todo = await Todo.findByIdAndDelete(id);
+            res.redirect('/');
         }
     }
 }
